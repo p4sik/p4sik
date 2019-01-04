@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kategorie</title>
+</head>
+{% block content %}
+<body>
+<p>Kategorie</p>
+<ul>
+    {% for category in categories %}
+      <li>
+          <a href="{% url 'blog:catego' category.id %}">{{ category }}</a>
+      </li>
+    {% empty %}
+      <li> nic niema</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'blog:new_catego' %}">Add a new categories:</a>
+
+</body>
+</html>
+
+{% endblock content %}

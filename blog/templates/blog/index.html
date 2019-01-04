@@ -1,0 +1,25 @@
+
+{% extends "blog/base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BLOGSON</title>
+</head>
+{%  block content %}
+
+ <body>
+    <p> TEST TEST!</p>
+
+    <ul>
+        {% for post in posts %}
+          <li>{{ post }}</li>
+        {% empty %}
+          <li> no nice jescze nei ma</li>
+        {% endfor %}
+    </ul>
+ </body>
+</html>
+
+{%  endblock content %}

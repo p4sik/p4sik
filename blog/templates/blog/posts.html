@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posty</title>
+</head>
+{% block content %}
+<body>
+Posty hehe
+<ul>
+    {% for post in posts %}
+      <li>{{ post }}</li>
+    {% empty %}
+      <li> No posts have been added yet.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'blog:new_post' catego.id %}">Add a new post:</a>
+</body>
+</html>
+{% endblock content %}

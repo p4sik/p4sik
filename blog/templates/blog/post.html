@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> KRB: {{ post }}</title>
+</head>
+{% block content %}
+<body>
+<p>{{ post }}</p>
+<p>{{ post.created_on|date:'M d, Y H:i' }}</p>
+<p>{{ post.text|linebreaks }}</p>
+
+
+
+<ul>
+    <p>Komentarze:</p>
+    {% for comment in comments %}
+      <li>
+        <p>{{ comment }}</p>
+        <p>{{ comment.created_on }}</p>
+      </li>
+    {% empty %}
+      <li>
+          <p> Nie ma jeszcze żadnych komentarzy</p>
+      </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
+{% endblock content %}

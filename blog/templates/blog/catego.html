@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ catego }}e</title>
+</head>
+{% block content %}
+<body>
+<p>KATEGORIA: {{ catego }}</p>
+<p>
+    <a href="{% url 'blog:new_post' catego.id %}">add new post</a>
+</p>
+<ul>
+    {% for post in posts %}
+      <li>
+          <p>{{ post.created_on|date:'M d, Y H:i' }}</p>
+          <p><a href="{% url 'blog:post' post.id %}">{{ post.title }}</a> </p>
+          <p> {{ post.text }}</p>
+      </li>
+    {% empty %}
+      <p> Xd</p>
+    {% endfor %}
+</ul>
+</body>
+</html>
+{% endblock content %}

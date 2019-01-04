@@ -1,0 +1,5 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+<a href="{% url 'blog:index' %}">Strona główna</a>
+<a href="{% url 'blog:categories' %}">Kategorie</a>
+{% block content %}{% endblock content %}
